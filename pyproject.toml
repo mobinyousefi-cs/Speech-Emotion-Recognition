@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "speech-emotion-recognition-librosa"
+version = "0.1.0"
+description = "Speech Emotion Recognition using librosa and scikit-learn (MLPClassifier) on RAVDESS."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+{ name = "Mobin Yousefi", email = "" },
+]
+license = { text = "MIT" }
+classifiers = [
+"Programming Language :: Python :: 3",
+"Programming Language :: Python :: 3 :: Only",
+"License :: OSI Approved :: MIT License",
+"Operating System :: OS Independent",
+"Intended Audience :: Science/Research",
+"Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["speech", "emotion", "ser", "librosa", "audio", "mlp", "ravdess"]
+
+
+dependencies = [
+"numpy>=1.24",
+"pandas>=2.0",
+"scikit-learn>=1.3",
+"librosa>=0.10",
+"soundfile>=0.12",
+"joblib>=1.3",
+"tqdm>=4.66",
+"rich>=13.7",
+]
+
+
+[project.optional-dependencies]
+dev = [
+"pytest>=8.0",
+"black>=24.0",
+"ruff>=0.6",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/mobinyousefi-cs/speech-emotion-recognition"
+"Bug Tracker" = "https://github.com/mobinyousefi-cs/speech-emotion-recognition/issues"
+
+
+[tool.black]
+line-length = 88
+target-version = ["py310", "py311"]
+
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I", "B"]
+ignore = ["E203", "E266", "E501", "W503"]
+
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra"
+pythonpath = ["src"]
